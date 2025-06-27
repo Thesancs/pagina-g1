@@ -1,3 +1,4 @@
+
 'use client';
 
 import { PlayCircle } from "lucide-react";
@@ -49,6 +50,14 @@ export default function VslPage() {
             </h2>
           </header>
 
+          <div className="border-y border-border/50 py-3 my-6">
+            <p className="text-xs text-muted-foreground">
+              <strong>Por Redação Saúde e Bem-Estar, g1</strong>
+              <br />
+              24/07/2024 14h32 ⋅ Atualizado há 2 horas
+            </p>
+          </div>
+
           <section className="my-6">
             <div className="w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center text-muted-foreground text-sm cursor-pointer group relative overflow-hidden">
               <img src="https://placehold.co/800x450" alt="Video thumbnail" className="w-full h-full object-cover" data-ai-hint="pregnant woman healthy food" />
@@ -62,14 +71,6 @@ export default function VslPage() {
           </section>
 
           <DelayedButton />
-
-          <div className="border-y border-border/50 py-3 my-6">
-            <p className="text-xs text-muted-foreground">
-              <strong>Por Redação Saúde e Bem-Estar, g1</strong>
-              <br />
-              24/07/2024 14h32 ⋅ Atualizado há 2 horas
-            </p>
-          </div>
 
           <article className="prose md:prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
             <p>
