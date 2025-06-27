@@ -14,7 +14,7 @@ export default function VslPage() {
       <div className="bg-background">
         <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           <header className="border-b border-border/50 pb-6 mb-6">
-            <h1 className="font-bold text-3xl md:text-4xl mb-4 text-foreground leading-tight">
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-4 text-foreground leading-tight">
               Método desenvolvido por nutricionista de Oxford tem ajudado gestantes a eliminarem enjoos e protegerem seus bebês sem medicação
             </h1>
             <h2 className="font-normal text-lg md:text-xl text-muted-foreground">
@@ -44,7 +44,7 @@ export default function VslPage() {
             </p>
           </div>
 
-          <article className="prose prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
+          <article className="prose md:prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
             <p>
               A gravidez é um período de grandes transformações e, para muitas mulheres, também de desconfortos como os enjoos matinais. Buscando uma solução natural e eficaz, um número crescente de gestantes tem adotado um novo método nutricional que promete não apenas aliviar os enjoos, mas também fortalecer a saúde do bebê.
             </p>
