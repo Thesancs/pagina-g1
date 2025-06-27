@@ -8,7 +8,7 @@ export default function VslPage() {
       <div className="w-full bg-primary flex items-center px-4 py-2 text-primary-foreground text-sm font-semibold">
         <span className="uppercase tracking-wide">g1</span>
         <div className="h-4 w-px bg-primary-foreground mx-3" />
-        <span className="uppercase tracking-wide">Exclusivo</span>
+        <span className="uppercase tracking-wide font-light">Exclusivo</span>
       </div>
       <div className="py-8 md:py-12">
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
