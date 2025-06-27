@@ -2,6 +2,7 @@
 
 import { PlayCircle } from "lucide-react";
 import { DelayedButton } from "./DelayedButton";
+import { AlertBanner } from "./AlertBanner";
 
 export default function VslPage() {
   return (
@@ -36,6 +37,7 @@ export default function VslPage() {
         <div className="h-4 w-px bg-primary-foreground mx-3" />
         <span className="uppercase tracking-wide font-light">Exclusivo</span>
       </div>
+      <AlertBanner />
       <div className="bg-background">
         <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           <header className="border-b border-border/50 pb-6 mb-6">
