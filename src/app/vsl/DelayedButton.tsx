@@ -9,7 +9,7 @@ export function DelayedButton() {
         size="lg"
         className="h-auto w-full md:w-auto py-4 px-6 text-base md:text-xl font-bold shadow-lg"
       >
-        QUERO GARANTIR MINHA VAGA COM DESCONTO
+        QUERO GARANTIR MEU DESCONTO
       </Button>
     </div>
   );

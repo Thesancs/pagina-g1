@@ -7,7 +7,32 @@ export default function VslPage() {
   return (
     <>
       <div className="w-full bg-primary flex items-center px-4 py-2 text-primary-foreground text-sm font-semibold">
-        <span className="uppercase tracking-wide">g1</span>
+        <svg
+          width="110"
+          height="28"
+          viewBox="0 0 110 28"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <text
+            x="0"
+            y="22"
+            fontFamily="Inter, sans-serif"
+            fontSize="28"
+            fontWeight="bold"
+          >
+            g1
+          </text>
+          <text
+            x="45"
+            y="21"
+            fontFamily="Inter, sans-serif"
+            fontSize="18"
+            fontWeight="500"
+          >
+            15 anos
+          </text>
+        </svg>
         <div className="h-4 w-px bg-primary-foreground mx-3" />
         <span className="uppercase tracking-wide font-light">Exclusivo</span>
       </div>
