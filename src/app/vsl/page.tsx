@@ -56,9 +56,6 @@ export default function VslPage() {
                 “Eu mal conseguia sair da cama. Tentei de tudo, mas nada parecia funcionar. Foi quando uma amiga me indicou o método e em menos de uma semana a diferença foi absurda. Recuperei minha energia e os enjoos desapareceram.”
               </p>
             </blockquote>
-            <p>
-              O programa, chamado Sistema de Sincronização Trimestral, foi criado por uma nutricionista brasileira com foco em alimentos específicos para cada fase da gestação, garantindo que mãe e bebê recebam os nutrientes essenciais para um desenvolvimento saudável e equilibrado.
-            </p>
           </article>
         </main>
       </div>
