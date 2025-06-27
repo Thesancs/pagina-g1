@@ -7,7 +7,7 @@ export function DelayedButton() {
     <div className="text-center my-8 animate-pulse">
       <Button
         size="lg"
-        className="h-auto w-full md:w-auto py-4 px-6 text-lg md:text-xl font-bold shadow-lg"
+        className="h-auto w-full md:w-auto py-4 px-6 text-base md:text-xl font-bold shadow-lg"
       >
         QUERO GARANTIR MINHA VAGA COM DESCONTO
       </Button>
