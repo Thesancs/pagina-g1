@@ -15,7 +15,7 @@ export default function VslPage() {
         <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           <header className="border-b border-border/50 pb-6 mb-6">
             <h1 className="font-bold text-3xl md:text-4xl mb-4 text-foreground leading-tight">
-              Método desenvolvido por nutricionista brasileira tem ajudado gestantes a eliminarem enjoos e protegerem seus bebês sem medicação
+              Método desenvolvido por nutricionista de Oxford tem ajudado gestantes a eliminarem enjoos e protegerem seus bebês sem medicação
             </h1>
             <h2 className="font-normal text-lg md:text-xl text-muted-foreground">
               Sistema de Sincronização Trimestral viralizou entre grávidas após mostrar resultados como prevenção da diabetes gestacional e melhora no desenvolvimento neurológico do bebê.
