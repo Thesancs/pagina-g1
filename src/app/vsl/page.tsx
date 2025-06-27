@@ -1,4 +1,7 @@
+'use client';
+
 import { PlayCircle } from "lucide-react";
+import { DelayedButton } from "./DelayedButton";
 
 export default function VslPage() {
   return (
@@ -30,6 +33,8 @@ export default function VslPage() {
               </div>
             </div>
           </section>
+
+          <DelayedButton />
 
           <div className="border-y border-border/50 py-3 my-6">
             <p className="text-xs text-muted-foreground">
