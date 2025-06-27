@@ -5,7 +5,7 @@ export function AlertBanner() {
   return (
     <div
       id="alert-banner"
-      className="w-full bg-primary text-center py-2 px-2 font-bold uppercase text-primary-foreground text-xs sm:text-sm"
+      className="w-full bg-red-700 text-center py-2 px-2 font-bold uppercase text-primary-foreground text-xs sm:text-sm"
     >
       {texto}
     </div>
