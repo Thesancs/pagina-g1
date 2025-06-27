@@ -1,5 +1,4 @@
 import { PlayCircle } from "lucide-react";
-import { CtaSection } from "./cta-section";
 
 export default function VslPage() {
   return (
@@ -56,8 +55,6 @@ export default function VslPage() {
               O programa, chamado Sistema de Sincronização Trimestral, foi criado por uma nutricionista brasileira com foco em alimentos específicos para cada fase da gestação, garantindo que mãe e bebê recebam os nutrientes essenciais para um desenvolvimento saudável e equilibrado.
             </p>
           </article>
-
-          <CtaSection />
         </main>
       </div>
     </>
