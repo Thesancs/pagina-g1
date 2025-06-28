@@ -1,10 +1,8 @@
-
 'use client';
 
-import { PlayCircle } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import { DelayedButton } from "./DelayedButton";
 import { AlertBanner } from "./AlertBanner";
-import { useEffect, useState } from "react";
 
 export default function VslPage() {
   const [authorDate, setAuthorDate] = useState('');
@@ -21,6 +19,19 @@ export default function VslPage() {
     const formattedDate = `${day}/${month}/${year}`;
     const fullText = `${formattedDate} 23h31 ⋅ Atualizado há 2 horas`;
     setAuthorDate(fullText);
+
+    // Carregar o script do Vturb SmartPlayer
+    const script = document.createElement("script");
+    script.src = "https://scripts.converteai.net/9a883f2a-807c-491c-b02d-85d1dd76948e/players/685f5b7652325b14a81dae76/v4/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup se necessário
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
   }, []);
 
   return (
@@ -67,14 +78,12 @@ export default function VslPage() {
           </div>
 
           <section className="my-6">
-            <div className="w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg flex items-center justify-center text-muted-foreground text-sm cursor-pointer group relative overflow-hidden">
-              <img src="https://placehold.co/800x450" alt="Video thumbnail" className="w-full h-full object-cover" data-ai-hint="pregnant woman healthy food" />
-              <div className="absolute inset-0 bg-black/30"></div>
-              <PlayCircle className="w-16 h-16 text-white/80 group-hover:text-white transition-colors z-10" />
-              <div className="absolute bottom-4 left-4 z-10">
-                <h3 className="text-white font-bold text-lg">Assista: Nutricionista explica método para gestação saudável</h3>
-                <p className="text-white/90 text-sm">Método já ajudou milhares de gestantes a terem uma gravidez mais tranquila e segura.</p>
-              </div>
+            {/* Vturb SmartPlayer Embed */}
+            <div className="w-full aspect-video rounded-lg overflow-hidden">
+              <vturb-smartplayer 
+                id="vid-685f5b7652325b14a81dae76" 
+                style={{ display: 'block', margin: '0 auto', width: '100%' }}
+              />
             </div>
           </section>
 
@@ -89,7 +98,7 @@ export default function VslPage() {
             </p>
             <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
               <p>
-                “Eu mal conseguia sair da cama. Tentei de tudo, mas nada parecia funcionar. Foi quando uma amiga me indicou o método e em menos de uma semana a diferença foi absurda. Recuperei minha energia e os enjoos desapareceram.”
+                "Eu mal conseguia sair da cama. Tentei de tudo, mas nada parecia funcionar. Foi quando uma amiga me indicou o método e em menos de uma semana a diferença foi absurda. Recuperei minha energia e os enjoos desapareceram."
               </p>
             </blockquote>
           </article>
