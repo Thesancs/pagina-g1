@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Gravidez em Foco',
+  title: 'Oxford revela protocolo que reduz sintomas da gravidez em até 80%',
   description: 'Método nutricional para gestantes.',
 };
 

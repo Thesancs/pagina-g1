@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import { DelayedButton } from "./DelayedButton";
 import { AlertBanner } from "./AlertBanner";
 import { Comments } from "./Comments";
 
@@ -27,10 +26,38 @@ export default function VslPage() {
     script.async = true;
     document.head.appendChild(script);
 
+    // Script para mostrar elementos ocultos com delay
+    const delayScript = document.createElement("script");
+    delayScript.innerHTML = `
+      var delaySeconds = 1200;
+      var player = document.querySelector("vturb-smartplayer");
+      player.addEventListener("player:ready", function() {
+        player.displayHiddenElements(delaySeconds, [".esconder"], {
+          persist: true
+        });
+      });
+    `;
+    document.head.appendChild(delayScript);
+
+    // Adicionar CSS para elementos ocultos
+    const style = document.createElement("style");
+    style.textContent = `
+      .esconder {
+        display: none;
+      }
+    `;
+    document.head.appendChild(style);
+
     return () => {
       // Cleanup se necessário
       if (script.parentNode) {
         script.parentNode.removeChild(script);
+      }
+      if (delayScript.parentNode) {
+        delayScript.parentNode.removeChild(delayScript);
+      }
+      if (style.parentNode) {
+        style.parentNode.removeChild(style);
       }
     };
   }, []);
@@ -90,8 +117,6 @@ export default function VslPage() {
               Assista à apresentação oficial do método que está revolucionando a nutrição gestacional e já ajudou milhares de gestantes a eliminar sintomas como enjoos, azia e inchaço sem medicamentos.
             </p>
           </section>
-
-          <DelayedButton />
 
           <article className="prose md:prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
             <p>
