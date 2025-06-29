@@ -62,18 +62,18 @@ export default function VslPage() {
         <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           <header className="border-b border-border/50 pb-6 mb-6">
             <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-4 text-foreground leading-tight">
-              Método desenvolvido por nutricionista de Oxford tem ajudado gestantes a eliminarem enjoos e protegerem seus bebês sem medicação
+              Método criado por médica brasileira com formação em Oxford reduz até 80% dos sintomas mais comuns da gravidez sem uso de medicamentos
             </h1>
             <h2 className="font-normal text-lg md:text-xl text-muted-foreground">
-              Sistema de Sincronização Trimestral viralizou entre grávidas após mostrar resultados como prevenção da diabetes gestacional e melhora no desenvolvimento neurológico do bebê.
+              Sistema de Sincronização Trimestral viraliza entre gestantes após demonstrar resultados clínicos como prevenção de diabetes gestacional, reversão de anemia e melhora no desenvolvimento fetal.
             </h2>
           </header>
 
           <div className="border-y border-border/50 py-3 my-6">
             <p className="text-xs text-muted-foreground">
-              <strong>Por Redação Saúde e Bem-Estar, g1</strong>
+              <strong>📍 Por Redação Saúde e Bem-Estar</strong>
               <br />
-              {authorDate || <span className="opacity-0">.</span>}
+              Atualizado há 2 horas
             </p>
           </div>
 
@@ -85,22 +85,39 @@ export default function VslPage() {
                 style={{ display: 'block', margin: '0 auto', width: '100%' }}
               />
             </div>
+            <p className="text-center text-sm text-muted-foreground mt-2">
+              Assista à apresentação oficial do método que está revolucionando a nutrição gestacional e já ajudou milhares de gestantes a eliminar sintomas como enjoos, azia e inchaço sem medicamentos.
+            </p>
           </section>
 
           <DelayedButton />
 
           <article className="prose md:prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
             <p>
-              A gravidez é um período de grandes transformações e, para muitas mulheres, também de desconfortos como os enjoos matinais. Buscando uma solução natural e eficaz, um número crescente de gestantes tem adotado um novo método nutricional que promete não apenas aliviar os enjoos, mas também fortalecer a saúde do bebê.
+              Nas últimas semanas, um novo protocolo nutricional voltado exclusivamente para gestantes tem chamado atenção de médicos e mães em todo o país. Desenvolvido pela médica nutróloga <strong>Dra. Helena Martins</strong>, com formação complementar em nutrição perinatal pela Universidade de Oxford, o Sistema de Sincronização Trimestral promete transformar a forma como mulheres se alimentam durante a gravidez.
             </p>
-            <p>
-              O caso de <strong>Juliana Ribeiro</strong>, grávida de 22 semanas, é um exemplo do impacto positivo. Ela relata que os primeiros meses foram extremamente difíceis.
-            </p>
+            
             <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
               <p>
-                "Eu mal conseguia sair da cama. Tentei de tudo, mas nada parecia funcionar. Foi quando uma amiga me indicou o método e em menos de uma semana a diferença foi absurda. Recuperei minha energia e os enjoos desapareceram."
+                "A maioria das complicações na gravidez está ligada à alimentação desajustada para o momento metabólico da mãe", explica Dra. Helena. "Quando sincronizamos nutrientes com as necessidades de cada trimestre, os sintomas simplesmente desaparecem."
               </p>
             </blockquote>
+
+            <p>
+              O protocolo já foi testado com mais de <strong>3.237 gestantes</strong> e ganhou notoriedade após ser divulgado em grupos de mães e profissionais de saúde. Segundo os dados divulgados, 47 das 50 gestantes acompanhadas relataram melhora significativa em menos de 15 dias.
+            </p>
+
+            <p>
+              Além da melhora clínica, o método também se mostrou eficiente na prevenção de diabetes gestacional, no controle de ganho de peso e no desenvolvimento neurológico do bebê. Um estudo recente da <strong>Universidade Federal do Rio de Janeiro (UFRJ)</strong> também apontou que as necessidades nutricionais mudam a cada 4 a 6 semanas durante a gestação — o que reforça a lógica da alimentação trimestral.
+            </p>
+
+            <p>
+              Atualmente, o protocolo está disponível em um programa digital chamado <strong>Nutrição Plena</strong>, que pode ser acessado por qualquer gestante, com suporte online e planos personalizados.
+            </p>
+
+            <p>
+              O conteúdo inclui mapa metabólico gestacional, receitas anti-enjoo, estratégias para controle de peso e prevenção de complicações comuns. A criadora do programa garante: <strong>"em 72 horas é possível sentir a diferença"</strong>.
+            </p>
           </article>
         </main>
       </div>
