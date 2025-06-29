@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { DelayedButton } from "./DelayedButton";
 import { AlertBanner } from "./AlertBanner";
+import { Comments } from "./Comments";
 
 export default function VslPage() {
   const [authorDate, setAuthorDate] = useState('');
@@ -118,6 +119,18 @@ export default function VslPage() {
             <p>
               O conteúdo inclui mapa metabólico gestacional, receitas anti-enjoo, estratégias para controle de peso e prevenção de complicações comuns. A criadora do programa garante: <strong>"em 72 horas é possível sentir a diferença"</strong>.
             </p>
+
+            <p>
+              📌 O acesso ao programa completo está disponível por tempo limitado [...].
+            </p>
+
+            <div className="border-t border-border/50 pt-6 mt-8">
+              <h3 className="font-semibold text-lg mb-4 text-foreground">
+                Após a publicação da reportagem, centenas de gestantes comentaram compartilhando suas próprias experiências com o método. Veja abaixo algumas histórias reais de transformação:
+              </h3>
+            </div>
+            
+            <Comments />
           </article>
         </main>
       </div>
