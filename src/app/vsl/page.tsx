@@ -38,11 +38,30 @@ export default function VslPage() {
     smartPlayerScript.async = true;
     document.head.appendChild(smartPlayerScript);
 
-    // Adicionar CSS para elementos ocultos
+    // Adicionar CSS para elementos ocultos e animação de pulsar
     const style = document.createElement("style");
     style.textContent = `
       .esconder {
         display: none;
+      }
+      
+      @keyframes pulsar {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+        }
+      }
+      
+      .botao-pulsar {
+        animation: pulsar 2s infinite;
       }
     `;
     document.head.appendChild(style);
@@ -50,7 +69,7 @@ export default function VslPage() {
     // Script para mostrar elementos ocultos com delay
     const delayScript = document.createElement("script");
     delayScript.innerHTML = `
-      var delaySeconds = 10;
+      var delaySeconds = 600;
       var player = document.querySelector("vturb-smartplayer");
       player.addEventListener("player:ready", function() {
         player.displayHiddenElements(delaySeconds, [".esconder"], {
@@ -129,13 +148,12 @@ export default function VslPage() {
             <div className="esconder my-8 text-center">
               <Button 
                 size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 botao-pulsar"
                 onClick={() => {
-                  // Aqui você pode adicionar o link de compra
-                  window.open('https://seu-link-de-compra.com', '_blank');
+                  window.open('https://www.ggcheckout.com/checkout/v2/0DjyWtCAcsh8jkJvkXUy', '_blank');
                 }}
               >
-                🛒 Quero proteger meu bebê, agora!
+                QUERO PROTEGER MEU BEBÊ AGORA
               </Button>
               <p className="text-sm text-muted-foreground mt-2">
                 ⚡ Acesso imediato • Garantia de 30 dias • Suporte completo
