@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { AlertBanner } from "./AlertBanner";
 import { Comments } from "./Comments";
-import { Button } from "@/components/ui/button";
 
 export default function VslPage() {
   const [authorDate, setAuthorDate] = useState('');
@@ -121,6 +120,12 @@ export default function VslPage() {
                 style={{ display: 'block', margin: '0 auto', width: '100%' }}
               />
             </div>
+            
+            {/* Área para botão do Vturb - Elemento oculto que será revelado */}
+            <div className="esconder">
+              {/* O Vturb SmartPlayer irá inserir o botão aqui automaticamente */}
+            </div>
+            
             <p className="text-center text-sm text-muted-foreground mt-2">
               Assista à apresentação oficial do método que está revolucionando a nutrição gestacional e já ajudou milhares de gestantes a eliminar sintomas como enjoos, azia e inchaço sem medicamentos.
             </p>
@@ -156,23 +161,6 @@ export default function VslPage() {
             <p>
               📌 O acesso ao programa completo está disponível por tempo limitado [...].
             </p>
-
-            {/* Botão de Compra - Elemento oculto que será revelado */}
-            <div className="esconder my-8 text-center">
-              <Button 
-                size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200"
-                onClick={() => {
-                  // Aqui você pode adicionar o link de compra
-                  window.open('https://seu-link-de-compra.com', '_blank');
-                }}
-              >
-                🛒 QUERO ACESSAR O PROGRAMA AGORA
-              </Button>
-              <p className="text-sm text-muted-foreground mt-2">
-                ⚡ Acesso imediato • Garantia de 30 dias • Suporte completo
-              </p>
-            </div>
 
             <div className="border-t border-border/50 pt-6 mt-8">
               <h3 className="font-semibold text-lg mb-4 text-foreground">
