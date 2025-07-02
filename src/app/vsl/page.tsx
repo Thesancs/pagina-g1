@@ -3,9 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { AlertBanner } from "./AlertBanner";
 import { Comments } from "./Comments";
+import { useVturb } from "../../hooks/use-vturb";
 
 export default function VslPage() {
   const [authorDate, setAuthorDate] = useState('');
+
+  // Configuração do Vturb
+  useVturb({
+    playerId: '685f5b7652325b14a81dae76',
+    delaySeconds: 10,
+    buttonSelector: '.esconder'
+  });
 
   useEffect(() => {
     const today = new Date();
@@ -19,79 +27,6 @@ export default function VslPage() {
     const formattedDate = `${day}/${month}/${year}`;
     const fullText = `${formattedDate} 23h31 ⋅ Atualizado há 2 horas`;
     setAuthorDate(fullText);
-
-    // Script de otimização de performance
-    const performanceScript = document.createElement("script");
-    performanceScript.innerHTML = `!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);`;
-    document.head.appendChild(performanceScript);
-
-    // Carregar o script principal do Vturb SmartPlayer
-    const mainScript = document.createElement("script");
-    mainScript.src = "https://scripts.converteai.net/9a883f2a-807c-491c-b02d-85d1dd76948e/players/685f5b7652325b14a81dae76/v4/player.js";
-    mainScript.async = true;
-    document.head.appendChild(mainScript);
-
-    // Carregar o script da biblioteca SmartPlayer
-    const smartPlayerScript = document.createElement("script");
-    smartPlayerScript.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js";
-    smartPlayerScript.async = true;
-    document.head.appendChild(smartPlayerScript);
-
-    // Adicionar CSS para elementos ocultos
-    const style = document.createElement("style");
-    style.textContent = `
-      .esconder {
-        display: none;
-      }
-    `;
-    document.head.appendChild(style);
-
-    // Script para mostrar elementos ocultos com delay
-    const delayScript = document.createElement("script");
-    delayScript.innerHTML = `
-      function setupPlayer() {
-        var player = document.querySelector("vturb-smartplayer");
-        if (player) {
-          console.log("Player encontrado, configurando...");
-          var delaySeconds = 10;
-          
-          // Verifica se o player já está pronto
-          if (player.isReady) {
-            console.log("Player já está pronto, revelando elementos...");
-            player.displayHiddenElements(delaySeconds, [".esconder"], {
-              persist: true
-            });
-          } else {
-            console.log("Aguardando player ficar pronto...");
-            player.addEventListener("player:ready", function() {
-              console.log("Player pronto! Revelando elementos...");
-              player.displayHiddenElements(delaySeconds, [".esconder"], {
-                persist: true
-              });
-            });
-          }
-        } else {
-          console.log("Player não encontrado, tentando novamente em 1 segundo...");
-          // Se o player ainda não existe, tenta novamente em 1 segundo
-          setTimeout(setupPlayer, 1000);
-        }
-      }
-      
-      // Aguarda um pouco mais para garantir que os scripts do Vturb carregaram
-      setTimeout(function() {
-        setupPlayer();
-      }, 2000);
-    `;
-    document.head.appendChild(delayScript);
-
-    return () => {
-      // Cleanup de todos os elementos adicionados
-      [performanceScript, mainScript, smartPlayerScript, delayScript, style].forEach(element => {
-        if (element.parentNode) {
-          element.parentNode.removeChild(element);
-        }
-      });
-    };
   }, []);
 
   return (
@@ -146,14 +81,14 @@ export default function VslPage() {
               />
             </div>
             
-            {/* Área para botão do Vturb - Elemento oculto que será revelado */}
-            <div className="esconder">
-              {/* O Vturb SmartPlayer irá inserir o botão aqui automaticamente */}
-            </div>
-            
             <p className="text-center text-sm text-muted-foreground mt-2">
               Assista à apresentação oficial do método que está revolucionando a nutrição gestacional e já ajudou milhares de gestantes a eliminar sintomas como enjoos, azia e inchaço sem medicamentos.
             </p>
+            
+            {/* Área para botão do Vturb - Elemento oculto que será revelado */}
+            <div className="esconder vturb-button-container">
+              {/* O Vturb SmartPlayer irá inserir o botão aqui automaticamente */}
+            </div>
           </section>
 
           <article className="prose md:prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
