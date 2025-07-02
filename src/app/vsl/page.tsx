@@ -63,6 +63,34 @@ export default function VslPage() {
       .botao-pulsar {
         animation: pulsar 2s infinite;
       }
+      
+      /* Responsividade para mobile */
+      @media (max-width: 768px) {
+        .botao-pulsar {
+          width: 100% !important;
+          max-width: 320px;
+          font-size: 16px !important;
+          padding: 16px 20px !important;
+          margin: 0 auto;
+        }
+        
+        .esconder {
+          padding: 0 16px;
+        }
+        
+        .esconder p {
+          font-size: 12px !important;
+          line-height: 1.4;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .botao-pulsar {
+          font-size: 14px !important;
+          padding: 14px 16px !important;
+          max-width: 280px;
+        }
+      }
     `;
     document.head.appendChild(style);
 
@@ -114,25 +142,25 @@ export default function VslPage() {
       </div>
       <AlertBanner />
       <div className="bg-background">
-        <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-          <header className="border-b border-border/50 pb-6 mb-6">
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-4 text-foreground leading-tight">
+        <main className="max-w-3xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-8 md:py-12">
+          <header className="border-b border-border/50 pb-4 sm:pb-6 mb-4 sm:mb-6">
+            <h1 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 sm:mb-4 text-foreground leading-tight">
               Método criado por médica brasileira com formação em Oxford reduz até 80% dos sintomas mais comuns da gravidez sem uso de medicamentos
             </h1>
-            <h2 className="font-normal text-lg md:text-xl text-muted-foreground">
+            <h2 className="font-normal text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
               Sistema de Sincronização Trimestral viraliza entre gestantes após demonstrar resultados clínicos como prevenção de diabetes gestacional, reversão de anemia e melhora no desenvolvimento fetal.
             </h2>
           </header>
 
-          <div className="border-y border-border/50 py-3 my-6">
-            <p className="text-xs text-muted-foreground">
+          <div className="border-y border-border/50 py-2 sm:py-3 my-4 sm:my-6">
+            <p className="text-xs text-muted-foreground px-2 sm:px-0">
               <strong>📍 Por Redação Saúde e Bem-Estar</strong>
               <br />
               Atualizado há 2 horas
             </p>
           </div>
 
-          <section className="my-6">
+          <section className="my-4 sm:my-6">
             {/* Vturb SmartPlayer Embed */}
             <div className="w-full aspect-video rounded-lg overflow-hidden">
               <vturb-smartplayer 
@@ -140,33 +168,33 @@ export default function VslPage() {
                 style={{ display: 'block', margin: '0 auto', width: '100%' }}
               />
             </div>
-            <p className="text-center text-sm text-muted-foreground mt-2">
+            <p className="text-center text-xs sm:text-sm text-muted-foreground mt-2 px-2 sm:px-0">
               Assista à apresentação oficial do método que está revolucionando a nutrição gestacional e já ajudou milhares de gestantes a eliminar sintomas como enjoos, azia e inchaço sem medicamentos.
             </p>
 
             {/* Botão de Compra - Elemento oculto que será revelado */}
-            <div className="esconder my-8 text-center">
+            <div className="esconder my-4 sm:my-8 text-center px-4 sm:px-0">
               <Button 
                 size="lg" 
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 botao-pulsar"
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 sm:py-4 px-4 sm:px-8 text-sm sm:text-lg rounded-lg shadow-lg transform hover:scale-105 transition-all duration-200 botao-pulsar w-full sm:w-auto max-w-sm sm:max-w-none"
                 onClick={() => {
                   window.open('https://www.ggcheckout.com/checkout/v2/0DjyWtCAcsh8jkJvkXUy', '_blank');
                 }}
               >
                 QUERO PROTEGER MEU BEBÊ AGORA
               </Button>
-              <p className="text-sm text-muted-foreground mt-2">
+              <p className="text-xs sm:text-sm text-muted-foreground mt-2 px-2 sm:px-0">
                 ⚡ Acesso imediato • Garantia de 30 dias • Suporte completo
               </p>
             </div>
           </section>
 
-          <article className="prose md:prose-lg max-w-none text-foreground space-y-6 leading-relaxed">
-            <p>
+          <article className="prose prose-sm sm:prose-base md:prose-lg max-w-none text-foreground space-y-4 sm:space-y-6 leading-relaxed">
+            <p className="text-sm sm:text-base">
               Nas últimas semanas, um novo protocolo nutricional voltado exclusivamente para gestantes tem chamado atenção de médicos e mães em todo o país. Desenvolvido pela médica nutróloga <strong>Dra. Helena Martins</strong>, com formação complementar em nutrição perinatal pela Universidade de Oxford, o Sistema de Sincronização Trimestral promete transformar a forma como mulheres se alimentam durante a gravidez.
             </p>
             
-            <blockquote className="border-l-4 border-primary/50 pl-4 my-6 italic text-muted-foreground">
+            <blockquote className="border-l-4 border-primary/50 pl-3 sm:pl-4 my-4 sm:my-6 italic text-muted-foreground text-sm sm:text-base">
               <p>
                 "A maioria das complicações na gravidez está ligada à alimentação desajustada para o momento metabólico da mãe", explica Dra. Helena. "Quando sincronizamos nutrientes com as necessidades de cada trimestre, os sintomas simplesmente desaparecem."
               </p>
@@ -192,8 +220,8 @@ export default function VslPage() {
               📌 O acesso ao programa completo está disponível por tempo limitado [...].
             </p>
 
-            <div className="border-t border-border/50 pt-6 mt-8">
-              <h3 className="font-semibold text-lg mb-4 text-foreground">
+            <div className="border-t border-border/50 pt-4 sm:pt-6 mt-6 sm:mt-8">
+              <h3 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4 text-foreground">
                 Após a publicação da reportagem, centenas de gestantes comentaram compartilhando suas próprias experiências com o método. Veja abaixo algumas histórias reais de transformação:
               </h3>
             </div>
