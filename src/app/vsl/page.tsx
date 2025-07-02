@@ -49,13 +49,23 @@ export default function VslPage() {
     // Script para mostrar elementos ocultos com delay
     const delayScript = document.createElement("script");
     delayScript.innerHTML = `
-      var delaySeconds = 10;
-      var player = document.querySelector("vturb-smartplayer");
-      player.addEventListener("player:ready", function() {
-        player.displayHiddenElements(delaySeconds, [".esconder"], {
-          persist: true
-        });
-      });
+      function setupPlayer() {
+        var player = document.querySelector("vturb-smartplayer");
+        if (player) {
+          var delaySeconds = 10;
+          player.addEventListener("player:ready", function() {
+            player.displayHiddenElements(delaySeconds, [".esconder"], {
+              persist: true
+            });
+          });
+        } else {
+          // Se o player ainda não existe, tenta novamente em 1 segundo
+          setTimeout(setupPlayer, 1000);
+        }
+      }
+      
+      // Inicia a configuração do player
+      setupPlayer();
     `;
     document.head.appendChild(delayScript);
 
