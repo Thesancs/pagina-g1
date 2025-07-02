@@ -3,17 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { AlertBanner } from "./AlertBanner";
 import { Comments } from "./Comments";
-import { useVturb } from "../../hooks/use-vturb";
+import { VturbPlayer } from "../../components/VturbPlayer";
 
 export default function VslPage() {
   const [authorDate, setAuthorDate] = useState('');
-
-  // Configuração do Vturb
-  useVturb({
-    playerId: '685f5b7652325b14a81dae76',
-    delaySeconds: 10,
-    buttonSelector: '.esconder'
-  });
 
   useEffect(() => {
     const today = new Date();
@@ -27,6 +20,29 @@ export default function VslPage() {
     const formattedDate = `${day}/${month}/${year}`;
     const fullText = `${formattedDate} 23h31 ⋅ Atualizado há 2 horas`;
     setAuthorDate(fullText);
+
+    // Adicionar estilos CSS para o botão do Vturb
+    const style = document.createElement("style");
+    style.textContent = `
+      .esconder {
+        display: none;
+      }
+      .vturb-button-container {
+        text-align: center;
+        margin: 20px 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      if (style.parentNode) {
+        style.parentNode.removeChild(style);
+      }
+    };
   }, []);
 
   return (
@@ -74,12 +90,11 @@ export default function VslPage() {
 
           <section className="my-6">
             {/* Vturb SmartPlayer Embed */}
-            <div className="w-full aspect-video rounded-lg overflow-hidden">
-              <vturb-smartplayer 
-                id="vid-685f5b7652325b14a81dae76" 
-                style={{ display: 'block', margin: '0 auto', width: '100%' }}
-              />
-            </div>
+            <VturbPlayer 
+              playerId="685f5b7652325b14a81dae76"
+              delaySeconds={10}
+              buttonSelector=".esconder"
+            />
             
             <p className="text-center text-sm text-muted-foreground mt-2">
               Assista à apresentação oficial do método que está revolucionando a nutrição gestacional e já ajudou milhares de gestantes a eliminar sintomas como enjoos, azia e inchaço sem medicamentos.
