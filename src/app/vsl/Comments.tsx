@@ -75,7 +75,7 @@ export const Comments: React.FC = () => {
       likes: 143,
       replies: 19,
       time: "1 hora atrás",
-      reactions: [{ type: "❤️", count: 12 }, { type: "😮", count: 3 }]
+      reactions: [{ type: "👍", count: 12 }, { type: "❤️", count: 3 }]
     },
     {
       name: "Juliana Ribeiro",
@@ -93,7 +93,7 @@ export const Comments: React.FC = () => {
       likes: 212,
       replies: 34,
       time: "3 horas atrás",
-      reactions: [{ type: "❤️", count: 18 }, { type: "👍", count: 5 }]
+      reactions: [{ type: "👍", count: 18 }, { type: "❤️", count: 5 }]
     },
     {
       name: "Fernanda Lima",
@@ -102,7 +102,7 @@ export const Comments: React.FC = () => {
       likes: 75,
       replies: 9,
       time: "1 hora atrás",
-      reactions: [{ type: "❤️", count: 6 }]
+      reactions: [{ type: "👍", count: 6 }]
     },
     {
       name: "Camila Dias",
@@ -111,7 +111,7 @@ export const Comments: React.FC = () => {
       likes: 183,
       replies: 21,
       time: "4 horas atrás",
-      reactions: [{ type: "😮", count: 7 }, { type: "👍", count: 4 }]
+      reactions: [{ type: "👍", count: 7 }, { type: "😮", count: 4 }]
     },
     {
       name: "Mariana Costa",
@@ -120,7 +120,7 @@ export const Comments: React.FC = () => {
       likes: 156,
       replies: 28,
       time: "30 minutos atrás",
-      reactions: [{ type: "❤️", count: 15 }, { type: "👍", count: 3 }]
+      reactions: [{ type: "👍", count: 15 }, { type: "❤️", count: 3 }]
     },
     {
       name: "Dra. Ana Beatriz",
@@ -138,7 +138,7 @@ export const Comments: React.FC = () => {
       likes: 134,
       replies: 16,
       time: "2 horas atrás",
-      reactions: [{ type: "❤️", count: 11 }]
+      reactions: [{ type: "👍", count: 11 }]
     },
     {
       name: "Roberta Silva",
@@ -165,7 +165,7 @@ export const Comments: React.FC = () => {
       likes: 167,
       replies: 23,
       time: "2 dias atrás",
-      reactions: [{ type: "❤️", count: 14 }, { type: "👍", count: 5 }]
+      reactions: [{ type: "👍", count: 14 }, { type: "❤️", count: 5 }]
     },
     {
       name: "Dra. Renata Almeida",
@@ -183,7 +183,7 @@ export const Comments: React.FC = () => {
       likes: 145,
       replies: 18,
       time: "4 dias atrás",
-      reactions: [{ type: "❤️", count: 12 }, { type: "😮", count: 2 }]
+      reactions: [{ type: "👍", count: 12 }, { type: "😮", count: 2 }]
     },
     {
       name: "Dr. Marcos Oliveira",
@@ -201,7 +201,7 @@ export const Comments: React.FC = () => {
       likes: 276,
       replies: 38,
       time: "1 semana atrás",
-      reactions: [{ type: "❤️", count: 25 }, { type: "😮", count: 8 }, { type: "👍", count: 6 }]
+      reactions: [{ type: "👍", count: 25 }, { type: "❤️", count: 8 }, { type: "😮", count: 6 }]
     }
   ];
 
