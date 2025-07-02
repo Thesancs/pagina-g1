@@ -52,20 +52,35 @@ export default function VslPage() {
       function setupPlayer() {
         var player = document.querySelector("vturb-smartplayer");
         if (player) {
+          console.log("Player encontrado, configurando...");
           var delaySeconds = 10;
-          player.addEventListener("player:ready", function() {
+          
+          // Verifica se o player já está pronto
+          if (player.isReady) {
+            console.log("Player já está pronto, revelando elementos...");
             player.displayHiddenElements(delaySeconds, [".esconder"], {
               persist: true
             });
-          });
+          } else {
+            console.log("Aguardando player ficar pronto...");
+            player.addEventListener("player:ready", function() {
+              console.log("Player pronto! Revelando elementos...");
+              player.displayHiddenElements(delaySeconds, [".esconder"], {
+                persist: true
+              });
+            });
+          }
         } else {
+          console.log("Player não encontrado, tentando novamente em 1 segundo...");
           // Se o player ainda não existe, tenta novamente em 1 segundo
           setTimeout(setupPlayer, 1000);
         }
       }
       
-      // Inicia a configuração do player
-      setupPlayer();
+      // Aguarda um pouco mais para garantir que os scripts do Vturb carregaram
+      setTimeout(function() {
+        setupPlayer();
+      }, 2000);
     `;
     document.head.appendChild(delayScript);
 
