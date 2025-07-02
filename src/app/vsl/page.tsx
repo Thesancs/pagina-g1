@@ -20,24 +20,22 @@ export default function VslPage() {
     const fullText = `${formattedDate} 23h31 ⋅ Atualizado há 2 horas`;
     setAuthorDate(fullText);
 
-    // Carregar o script do Vturb SmartPlayer
-    const script = document.createElement("script");
-    script.src = "https://scripts.converteai.net/9a883f2a-807c-491c-b02d-85d1dd76948e/players/685f5b7652325b14a81dae76/v4/player.js";
-    script.async = true;
-    document.head.appendChild(script);
+    // Script de otimização de performance
+    const performanceScript = document.createElement("script");
+    performanceScript.innerHTML = `!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);`;
+    document.head.appendChild(performanceScript);
 
-    // Script para mostrar elementos ocultos com delay
-    const delayScript = document.createElement("script");
-    delayScript.innerHTML = `
-      var delaySeconds = 1200;
-      var player = document.querySelector("vturb-smartplayer");
-      player.addEventListener("player:ready", function() {
-        player.displayHiddenElements(delaySeconds, [".esconder"], {
-          persist: true
-        });
-      });
-    `;
-    document.head.appendChild(delayScript);
+    // Carregar o script principal do Vturb SmartPlayer
+    const mainScript = document.createElement("script");
+    mainScript.src = "https://scripts.converteai.net/9a883f2a-807c-491c-b02d-85d1dd76948e/players/685f5b7652325b14a81dae76/v4/player.js";
+    mainScript.async = true;
+    document.head.appendChild(mainScript);
+
+    // Carregar o script da biblioteca SmartPlayer
+    const smartPlayerScript = document.createElement("script");
+    smartPlayerScript.src = "https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js";
+    smartPlayerScript.async = true;
+    document.head.appendChild(smartPlayerScript);
 
     // Adicionar CSS para elementos ocultos
     const style = document.createElement("style");
@@ -48,17 +46,26 @@ export default function VslPage() {
     `;
     document.head.appendChild(style);
 
+    // Script para mostrar elementos ocultos com delay
+    const delayScript = document.createElement("script");
+    delayScript.innerHTML = `
+      var delaySeconds = 10;
+      var player = document.querySelector("vturb-smartplayer");
+      player.addEventListener("player:ready", function() {
+        player.displayHiddenElements(delaySeconds, [".esconder"], {
+          persist: true
+        });
+      });
+    `;
+    document.head.appendChild(delayScript);
+
     return () => {
-      // Cleanup se necessário
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-      if (delayScript.parentNode) {
-        delayScript.parentNode.removeChild(delayScript);
-      }
-      if (style.parentNode) {
-        style.parentNode.removeChild(style);
-      }
+      // Cleanup de todos os elementos adicionados
+      [performanceScript, mainScript, smartPlayerScript, delayScript, style].forEach(element => {
+        if (element.parentNode) {
+          element.parentNode.removeChild(element);
+        }
+      });
     };
   }, []);
 

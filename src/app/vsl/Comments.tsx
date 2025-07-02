@@ -45,7 +45,6 @@ const Comment: React.FC<CommentProps> = ({ name, avatar, content, likes, replies
               ))}
             </div>
           )}
-          <span>👍 {likes}</span>
           <span>💬 {replies}</span>
         </div>
       </div>
@@ -272,19 +271,12 @@ export const Comments: React.FC = () => {
       </div>
       
       <div className="mt-4 pt-4 border-t border-gray-100">
-        <div className="flex items-center space-x-3">
-          <img 
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
-            alt="Seu perfil"
-            className="w-8 h-8 rounded-full object-cover"
+        <div className="flex-1">
+          <input
+            type="text"
+            placeholder="Escreva um comentário..."
+            className="w-full px-4 py-2 bg-gray-50 rounded-full text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
-          <div className="flex-1">
-            <input
-              type="text"
-              placeholder="Escreva um comentário..."
-              className="w-full px-4 py-2 bg-gray-50 rounded-full text-sm border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-          </div>
         </div>
       </div>
     </div>
