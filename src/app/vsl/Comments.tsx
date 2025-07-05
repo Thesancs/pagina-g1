@@ -97,7 +97,7 @@ export const Comments: React.FC = () => {
     },
     {
       name: "Fernanda Lima",
-      avatar: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=80&h=80&fit=crop&crop=face",
+      avatar: "https://i.imgur.com/Qblh0RN.jpeg",
       content: "Estou no terceiro trimestre e achava que era tarde demais pra mudar algo. Que nada! Em 5 dias os inchaços melhoraram muito e até meu sono voltou ao normal. Queria ter descoberto isso antes 😭.",
       likes: 75,
       replies: 9,
@@ -281,4 +281,4 @@ export const Comments: React.FC = () => {
       </div>
     </div>
   );
-}; 
+};
